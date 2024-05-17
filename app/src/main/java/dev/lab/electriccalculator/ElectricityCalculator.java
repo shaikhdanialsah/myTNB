@@ -138,7 +138,7 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
 
     public void editRebateVisible(boolean isChecked) {
         if (isChecked) {
-            rebateText.setText("");
+            rebateText.setText("0.0");
             rebateText.setVisibility(View.VISIBLE);
             validation2.setVisibility(View.VISIBLE);
             switchChecker.setText("Yes");
@@ -240,13 +240,22 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
                 String totalRebateString = df.format(totalRebate);
                 String totalChargesString = df.format(totalCharges);
                 electDisplay.setText(electUsage + "kWh");
-                rebateDisplay.setText("- RM" + totalRebateString);
-                chargeDisplay.setText("RM" + totalChargesString);
+
+                if(rebateText.getVisibility()==View.INVISIBLE)
+                {
+                    rebateDisplay.setText("Not Included" );
+                }
+                else
+                {
+                    rebateDisplay.setText("- RM " + totalRebateString);
+                }
+
+                chargeDisplay.setText("RM " + totalChargesString);
 
                 totalRebate = Double.parseDouble(totalRebateString.replace(",", ""));
                 totalCharges = Double.parseDouble(totalChargesString.replace(",", ""));
                 total = totalCharges - totalRebate;
-                totalDisplay.setText("RM" + df.format(total));
+                totalDisplay.setText("RM " + df.format(total));
             } catch (NumberFormatException nfe) {
 
                 if(rebateText.getVisibility()==View.VISIBLE)
