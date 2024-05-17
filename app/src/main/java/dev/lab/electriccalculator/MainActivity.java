@@ -3,10 +3,9 @@ package dev.lab.electriccalculator;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,8 +15,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-
-import java.io.File;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -31,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
 
         setContentView(R.layout.activity_main);
         card2=findViewById(R.id.card2);
-        card3=findViewById(R.id.card3);
+        card3=findViewById(R.id.buttonGithub);
 
         card2.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this,ElectricityCalculator.class);
@@ -71,6 +68,7 @@ public class MainActivity extends AppCompatActivity{
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_SUBJECT, "Check out my awesome app!");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Hey there! I've developed this cool app. Check it out!");
                     intent.putExtra(Intent.EXTRA_TEXT, "Hey there! I've developed this cool app. Check it out!");
                     startActivity(Intent.createChooser(intent, "Share via"));
                     return true;
