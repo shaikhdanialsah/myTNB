@@ -51,13 +51,4 @@ public class AboutPage extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 
-    @SuppressLint("MissingSuperCall")
-    @Override
-    //When user click on back button
-    public void onBackPressed() {
-        Intent intent = new Intent(AboutPage.this, MainActivity.class);
-        startActivity(intent);
-
-
-    }
 }

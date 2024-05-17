@@ -48,27 +48,27 @@
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="332dp"
-                android:layout_height="43dp"
+                android:layout_width="304dp"
+                android:layout_height="44dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="1. Enter the amount of electricity used in kWh."
                 app:layout_constraintBottom_toTopOf="@+id/textView28"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.434"
+                app:layout_constraintHorizontal_bias="0.176"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.761" />
+                app:layout_constraintVertical_bias="0.461" />
 
             <TextView
                 android:id="@+id/textView28"
-                android:layout_width="336dp"
-                android:layout_height="48dp"
-                android:layout_marginBottom="172dp"
+                android:layout_width="313dp"
+                android:layout_height="51dp"
+                android:layout_marginBottom="164dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="2. Enter the rebate amount in % and the value should be between 0% to 5% only."
                 app:layout_constraintBottom_toTopOf="@+id/imageView9"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintHorizontal_bias="0.214"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -109,13 +109,13 @@
 
             <TextView
                 android:id="@+id/textView31"
-                android:layout_width="334dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="315dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="3. Click the 'CALCULATE' button to get your estimated bill result."
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintHorizontal_bias="0.225"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView28" />
 

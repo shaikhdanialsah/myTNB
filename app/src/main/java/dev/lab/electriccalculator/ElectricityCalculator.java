@@ -138,7 +138,7 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
 
     public void editRebateVisible(boolean isChecked) {
         if (isChecked) {
-            rebateText.setText("0.0");
+            rebateText.setText("");
             rebateText.setVisibility(View.VISIBLE);
             validation2.setVisibility(View.VISIBLE);
             switchChecker.setText("Yes");
