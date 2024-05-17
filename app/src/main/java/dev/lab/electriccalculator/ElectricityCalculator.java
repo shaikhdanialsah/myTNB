@@ -281,6 +281,10 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
             elecText.setText("");
             validation1.setText("");
             validation2.setText("");
+            if(rebateText.getVisibility()==View.VISIBLE)
+            {
+                switchChecker.setChecked(false);
+            }
             rebateText.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
             elecText.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
         }

@@ -67,8 +67,7 @@ public class MainActivity extends AppCompatActivity{
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_SUBJECT, "Check out my awesome app!");
-                    intent.putExtra(Intent.EXTRA_TEXT, "Hey there! I've developed this cool app. Check it out on GitHub!");
-                    intent.putExtra(Intent.EXTRA_TEXT, "https://github.com/shaikhdanialsah/ICT602");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Hey there! I've developed this cool app that can help you estimate your electricity bill. Check it out on GitHub!"+"\n https://github.com/shaikhdanialsah/ICT602");
                     startActivity(Intent.createChooser(intent, "Share via"));
                     return true;
                 }
