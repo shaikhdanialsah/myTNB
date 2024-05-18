@@ -25,7 +25,7 @@ public class AboutPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_page);
         copyRighttext = findViewById(R.id.copyRightText);
-        buttonGithub = findViewById(R.id.buttonGithub);
+        buttonGithub = findViewById(R.id.instructionButton);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);

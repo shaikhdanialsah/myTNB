@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
 
         setContentView(R.layout.activity_main);
         card2=findViewById(R.id.card2);
-        card3=findViewById(R.id.buttonGithub);
+        card3=findViewById(R.id.instructionButton);
 
         card2.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this,ElectricityCalculator.class);

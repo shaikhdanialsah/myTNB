@@ -162,7 +162,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/buttonGithub"
+                android:id="@+id/instructionButton"
                 android:layout_width="198dp"
                 android:layout_height="196dp"
                 android:layout_margin="0dp"
