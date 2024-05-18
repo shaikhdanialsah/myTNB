@@ -51,7 +51,7 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Electricity Calculator");
+        getSupportActionBar().setTitle("Calculator");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Add Switch listener
