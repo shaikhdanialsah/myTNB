@@ -23,7 +23,7 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
     Button buttonCalculate, buttonReset;
     EditText elecText, rebateText;
     TextView electDisplay, chargeDisplay, rebateDisplay, totalDisplay, validation1, validation2;
-    ImageView instructionImage;
+    ImageView instructionImage, valid1Icon, valid2Icon;
     Switch switchChecker;
 
     @Override
@@ -44,7 +44,8 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
         validation1 = findViewById(R.id.validation1);
         validation2 = findViewById(R.id.validation2);
         switchChecker = findViewById(R.id.switchChecker);
-
+        valid1Icon =findViewById(R.id.valid1Icon);
+        valid2Icon =findViewById(R.id.valid2Icon);
         instructionImage = findViewById(R.id.instructionImage);
         instructionImage.setOnClickListener(this);
 
@@ -66,28 +67,29 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().trim().isEmpty()) {
-                    validation1.setText(""); // Clear any previous message
-                    elecText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                    setValidation1();
+                    validation1.setText("This field cannot be empty!");
                     return;
                 }
 
                 try {
                     double value = Double.parseDouble(s.toString());
                     validation1.setText("Amount in kWh");
+                    valid1Icon.setVisibility(View.VISIBLE);
+                    valid1Icon.setImageDrawable(getDrawable(R.drawable.success));
                     validation1.setTextColor(getColor(R.color.colorPrimary));
                     elecText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorPrimary)));
                 } catch (NumberFormatException e) {
-                    validation1.setText("Please enter a valid number!"); // Invalid number
-                    validation1.setTextColor(getColor(R.color.colorError));
-                    elecText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                    setValidation1();
+                    validation1.setText("Please enter a valid number!");
                 }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.toString().trim().isEmpty()) {
-                    validation1.setText("This field cannot be empty!"); // When input is cleared
-                    validation1.setTextColor(getColor(R.color.colorError));
+                    setValidation1();
+                    validation1.setText("This field cannot be empty!");
                 }
             }
         });
@@ -97,45 +99,45 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 validation2.setText("");
-                rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().trim().isEmpty()) {
-                    validation2.setText(""); // Clear any previous message
-                    rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                    setValidation2();
+                    validation2.setText("This field cannot be empty!"); // Invalid number
                     return;
                 }
 
                 try {
                     double value = Double.parseDouble(s.toString());
                     if (value > 5 || value < 0) {
-                        validation2.setText("Value should be between 0 and 5 only!");
-                        validation2.setTextColor(getColor(R.color.colorError));
-                        rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                        setValidation2();
+                        validation2.setText("Please enter value between 0 and 5 only!"); // Invalid number
                     } else {
                         validation2.setText("Amount in %");
                         validation2.setTextColor(getColor(R.color.colorPrimary));// Clear the message if within range
                         rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorPrimary)));
+                        valid2Icon.setVisibility(View.VISIBLE);
+                        valid2Icon.setImageDrawable(getDrawable(R.drawable.success));
                     }
                 } catch (NumberFormatException e) {
+                    setValidation2();
                     validation2.setText("Please enter a valid number!"); // Invalid number
-                    validation2.setTextColor(getResources().getColor(R.color.colorError));
-                    rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
                 }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.toString().trim().isEmpty()) {
-                    validation2.setText("This field cannot be empty!"); // When input is cleared
-                    validation2.setTextColor(getColor(R.color.colorError));
+                    setValidation2();
+                    validation2.setText("This field cannot be empty!"); // Invalid number
                 }
             }
         });
     }
 
+    //For Switch button to include rebate or not
     public void editRebateVisible(boolean isChecked) {
         if (isChecked) {
             rebateText.setText("");
@@ -147,13 +149,13 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
 
             if(elecText.getText().toString().isEmpty())
             {
+                setValidation1();
                 validation1.setText("This field cannot be empty!");
-                validation1.setTextColor(getColor(R.color.colorError));
-                elecText.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorError)));
             }
         } else {
             rebateText.setVisibility(View.INVISIBLE);
             validation2.setVisibility(View.INVISIBLE);
+            valid2Icon.setVisibility(View.INVISIBLE);
             switchChecker.setText("No");
             switchChecker.setTrackTintList(ColorStateList.valueOf(getColor(R.color.black)));
             switchChecker.setTextColor(getColor(R.color.black));
@@ -161,6 +163,23 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
 
     }
 
+    public void setValidation1()
+    {
+        validation1.setTextColor(getColor(R.color.colorError));
+        elecText.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorError)));
+        valid1Icon.setVisibility(View.VISIBLE);
+        valid1Icon.setImageDrawable(getDrawable(R.drawable.error));
+    }
+
+    public void setValidation2()
+    {
+        validation2.setTextColor(getResources().getColor(R.color.colorError));
+        rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+        valid2Icon.setVisibility(View.VISIBLE);
+        valid2Icon.setImageDrawable(getDrawable(R.drawable.error));
+    }
+
+    //After User Click the Calculate Button
     @Override
     public void onClick(View view) {
         if (view == buttonCalculate) {
@@ -176,25 +195,23 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
             if(rebateText.getVisibility()==View.VISIBLE)
             {
                 if (elecText.getText().toString().isEmpty() && rebateText.getText().toString().isEmpty()) {
+                    setValidation1();
                     validation1.setText("This field cannot be empty!");
+                    setValidation2();
                     validation2.setText("This field cannot be empty!");
-                    validation1.setTextColor(getColor(R.color.colorError));
-                    validation2.setTextColor(getColor(R.color.colorError));
-                    rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
-                    elecText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
 
                 } else if (elecText.getText().toString().isEmpty()) {
-                    elecText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                    setValidation1();
                     validation1.setText("This field cannot be empty!");
                 } else if (rebateText.getText().toString().isEmpty()) {
-                    rebateText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                    setValidation2();
                     validation2.setText("This field cannot be empty!");
                 }
             }
             else
             {
                 if (elecText.getText().toString().isEmpty()) {
-                    elecText.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.colorError)));
+                    setValidation1();
                     validation1.setText("This field cannot be empty!");
                 }
             }
@@ -260,14 +277,14 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
 
                 if(rebateText.getVisibility()==View.VISIBLE)
                 {
-                    Toast.makeText(this, "Both values needs to be numbers.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Both values need to be numbers.", Toast.LENGTH_SHORT).show();
                 }
                 else
                     Toast.makeText(this, "Electricity value needs to be a number.", Toast.LENGTH_SHORT).show();
             } catch (IllegalArgumentException iae) {
                 Toast.makeText(this, iae.getMessage(), Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(this, "Please enter both value in number format.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter both values in number format.", Toast.LENGTH_SHORT).show();
             }
         } else if (view == instructionImage) {
             Intent intent = new Intent(ElectricityCalculator.this, InstructionPage.class);
@@ -281,6 +298,8 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
             elecText.setText("");
             validation1.setText("");
             validation2.setText("");
+            valid1Icon.setVisibility(View.INVISIBLE);
+            valid2Icon.setVisibility(View.INVISIBLE);
             if(rebateText.getVisibility()==View.VISIBLE)
             {
                 switchChecker.setChecked(false);

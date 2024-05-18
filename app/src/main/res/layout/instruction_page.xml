@@ -10,6 +10,7 @@
     android:background="#D9EEF8"
     android:transitionGroup="false">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -19,9 +20,8 @@
         android:theme="@style/ToolBarStyle"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="-1dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/instructionCard1"
@@ -48,27 +48,28 @@
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="304dp"
-                android:layout_height="44dp"
-                android:fontFamily="@font/roboto_bold"
+                android:layout_width="324dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="16dp"
                 android:text="1. Enter the amount of electricity used in kWh."
-                app:layout_constraintBottom_toTopOf="@+id/textView28"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toTopOf="@+id/step2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.176"
+                app:layout_constraintHorizontal_bias="0.322"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.461" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView28"
-                android:layout_width="313dp"
-                android:layout_height="51dp"
-                android:layout_marginBottom="164dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="2. Enter the rebate amount in % and the value should be between 0% to 5% only."
+                android:id="@+id/step2"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="152dp"
+                android:text="@string/step2"
+                android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toTopOf="@+id/imageView9"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.214"
+                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -78,6 +79,7 @@
                 android:layout_marginTop="188dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Important :"
+                android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
                 app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +91,7 @@
                 android:layout_height="47dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Please refer to the infographics below for the current electricity rates."
+                android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.833"
@@ -108,16 +111,16 @@
                 app:srcCompat="@drawable/electrictyrates" />
 
             <TextView
-                android:id="@+id/textView31"
-                android:layout_width="315dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="3. Click the 'CALCULATE' button to get your estimated bill result."
+                android:id="@+id/step3"
+                android:layout_width="323dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/step3"
+                android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.225"
+                app:layout_constraintHorizontal_bias="0.312"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                app:layout_constraintTop_toBottomOf="@+id/step2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -128,14 +131,15 @@
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Use the calculator with these simple steps:"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106"
         tools:ignore="MissingConstraints" />
 
 

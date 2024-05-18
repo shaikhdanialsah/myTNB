@@ -3,4 +3,7 @@
     <!-- to toggle the open close button of the navigation drawer -->
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="step3">3.Click the <b><strong>CALCULATE</strong></b> button to get your estimated bill result.</string>
+    <string name="step2">2. Enter the rebate amount in % and the value should be <b><strong>between 0% to 5% only.</strong></b></string>
+    <string name="step1">3 .Click the <b><strong>CALCULATE</strong></b> button to get your estimated bill result.</string>
 </resources>
