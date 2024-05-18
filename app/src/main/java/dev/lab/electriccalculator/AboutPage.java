@@ -1,24 +1,24 @@
 package dev.lab.electriccalculator;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
-import java.time.*;
-
-
-
+import java.time.Year;
 
 public class AboutPage extends AppCompatActivity {
 
     TextView copyRighttext;
+    CardView buttonGithub;
 
-   CardView buttonGithub;
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +32,17 @@ public class AboutPage extends AppCompatActivity {
         getSupportActionBar().setTitle("About Developer");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        int copyrightSymbolCodePoint = 169 ;
+        int copyrightSymbolCodePoint = 169;
         String s = Character.toString((char) copyrightSymbolCodePoint);
 
         Year thisYear = Year.now();
-        copyRighttext.setText(s+" "+thisYear+" MyTNB, All Rights Reserved");
+        copyRighttext.setText(s + " " + thisYear + " MyTNB, All Rights Reserved");
 
         buttonGithub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String toastMessage = "Opening GitHub...";
+                Toast.makeText(AboutPage.this, toastMessage, Toast.LENGTH_SHORT).show();
                 goLink("https://github.com/shaikhdanialsah/ICT602");
             }
         });
@@ -48,8 +50,6 @@ public class AboutPage extends AppCompatActivity {
 
     private void goLink(String url) {
         Uri uri = Uri.parse(url);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
-
-
 }

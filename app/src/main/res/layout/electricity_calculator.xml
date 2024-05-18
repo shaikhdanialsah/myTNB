@@ -156,16 +156,15 @@
 
                     <ImageView
                         android:id="@+id/instructionImage"
-                        android:layout_width="47dp"
-                        android:layout_height="38dp"
+                        android:layout_width="27dp"
+                        android:layout_height="24dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.87"
+                        app:layout_constraintHorizontal_bias="0.881"
                         app:layout_constraintStart_toEndOf="@+id/textView20"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.045"
-                        app:srcCompat="@android:drawable/ic_menu_info_details"
-                        app:tint="@color/colorPrimary" />
+                        app:layout_constraintVertical_bias="0.063"
+                        app:srcCompat="@drawable/question" />
 
                     <TextView
                         android:id="@+id/validation2"
@@ -371,9 +370,9 @@
                         android:id="@+id/chargeDisplay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="12dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.862"
+                        app:layout_constraintHorizontal_bias="0.868"
                         app:layout_constraintStart_toEndOf="@+id/textView23"
                         app:layout_constraintTop_toBottomOf="@+id/elecDisplay" />
 
@@ -381,9 +380,9 @@
                         android:id="@+id/rebateDisplay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.85"
+                        app:layout_constraintHorizontal_bias="0.845"
                         app:layout_constraintStart_toEndOf="@+id/textView24"
                         app:layout_constraintTop_toBottomOf="@+id/chargeDisplay" />
 
@@ -395,10 +394,10 @@
                         android:textSize="19sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.771"
+                        app:layout_constraintHorizontal_bias="0.812"
                         app:layout_constraintStart_toEndOf="@+id/textView25"
                         app:layout_constraintTop_toBottomOf="@+id/rebateDisplay"
-                        app:layout_constraintVertical_bias="0.297" />
+                        app:layout_constraintVertical_bias="0.426" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
