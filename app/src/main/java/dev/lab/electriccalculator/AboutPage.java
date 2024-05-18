@@ -51,4 +51,5 @@ public class AboutPage extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 
+
 }

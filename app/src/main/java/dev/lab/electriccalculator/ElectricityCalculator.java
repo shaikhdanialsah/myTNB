@@ -275,16 +275,30 @@ public class ElectricityCalculator extends AppCompatActivity implements View.OnC
                 totalDisplay.setText("RM " + df.format(total));
             } catch (NumberFormatException nfe) {
 
+                String toastMessage = "";
                 if(rebateText.getVisibility()==View.VISIBLE)
                 {
-                    Toast.makeText(this, "Both values need to be numbers.", Toast.LENGTH_SHORT).show();
+                    if(rebateText.getText().toString().isEmpty()||elecText.getText().toString().isEmpty())
+                    {
+                        toastMessage = "Please enter both values!";
+                    }
+                    else
+                        toastMessage ="Both values should be numbers!";
                 }
                 else
-                    Toast.makeText(this, "Electricity value needs to be a number.", Toast.LENGTH_SHORT).show();
+                {
+                    if(elecText.getText().toString().isEmpty())
+                    {
+                        toastMessage = "Please enter electricity amount!";
+                    }
+                    else
+                        toastMessage = "Electricity amount should be a number!";
+                }
+                    Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
             } catch (IllegalArgumentException iae) {
                 Toast.makeText(this, iae.getMessage(), Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(this, "Please enter both values in number format.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter both values in number format!", Toast.LENGTH_SHORT).show();
             }
         } else if (view == instructionImage) {
             Intent intent = new Intent(ElectricityCalculator.this, InstructionPage.class);
