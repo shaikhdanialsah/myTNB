@@ -36,7 +36,7 @@ public class AboutPage extends AppCompatActivity {
         String s = Character.toString((char) copyrightSymbolCodePoint);
 
         Year thisYear = Year.now();
-        copyRighttext.setText(s + " " + thisYear + " MyTNB, All Rights Reserved");
+        copyRighttext.setText(s + " " + thisYear + " SHAIKH DANIAL.All Rights Reserved");
 
         buttonGithub.setOnClickListener(new View.OnClickListener() {
             @Override
