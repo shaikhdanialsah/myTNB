@@ -20,4 +20,4 @@ This is a simple Java based mobile application project to fulfill the requiremen
 ## Author
 - [Shaikh Danial](https://github.com/shaikhdanialsah)
 ## License
-Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
