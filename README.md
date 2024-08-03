@@ -3,6 +3,11 @@
 
 This is a simple Java based mobile application project to fulfill the requirements for subject ICT602 - Mobile Technology and Development. The project is about a mobile application that can help users calculate the estimated electricity bills based on current electricity rates.
 
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1qSdf8JZsU-POUVPSrfCtzWWTzmMyrXwA" alt="Homepage" width="250" height="550" />
+</div>
+
+
 ## Prerequisites
 1. [Android Studio](https://developer.android.com/studio?utm_source=android-studio).
 
