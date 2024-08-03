@@ -17,6 +17,7 @@ This is a simple Java based mobile application project to fulfill the requiremen
 2. **Optional rebates:** If users have a rebate, they can click on the toggle button to include rebates and they just need to enter the percentage `(between 0% to 5%)`.
 3. **Calculate the bill:** Click on the `Calculate` button to get the estimated electricity bill.
 
-
+## Author
+- [Shaikh Danial](https://github.com/shaikhdanialsah)
 ## License
 Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.
